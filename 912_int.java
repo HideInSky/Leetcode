@@ -2,6 +2,13 @@
 // version of int[], int[]
 // performance 66ms
 
+// 10-25, 10-27
+
+// 1. line 23, create right array with the RIGHT int[arrayNum]
+// 2. line 33,34, left and right arrays should be returned to themselves, but not create new arrays to accept
+// 3. line 52, use better and conciser expression s[k++] = left[i++]
+// 4. line 51, use && instead of ||, because you want to have both conditions at the same time
+
 class Solution {
     public int[] sortArray(int[] nums) {
         return MS(nums);
@@ -16,7 +23,7 @@ class Solution {
         int hi = nums.length-1;
         int mi = hi/2;
         int[] left = new int[mi+1];
-        int[] right = new int[hi-mi];
+        int[] right = new int[hi-mi]; // 
         
         for (int i = 0; i<= mi; i++){
             left[i] = nums[i];
