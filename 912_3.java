@@ -38,6 +38,9 @@ class Solution {
         }
         
         i = 0; j = 0; k = lo;
+        // imagion 3 arrays
+        // left [ |  |  |]   right [ |  |  |]
+        //    nums    [ |  |  |  |  |  |]
         while (i < n1 && j < n2){
             if (left[i] < right[j]){
                 nums[k++] = left[i++];
