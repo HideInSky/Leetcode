@@ -20,8 +20,16 @@ package Tree;
  */
 class Solution {
     public TreeNode pruneTree(TreeNode root) {
-        if (root.val == 0){
-            pruneTree
-        }
+        containsOne(root);
+        return root; // 注意记得return
+    }
+    public boolean containsOne(TreeNode node){
+        if (node == null) return false;
+        boolean left = containsOne(node.left);
+        boolean right = containsOne(node.right); 
+        
+        if (!left) node.left = null;
+        if (!right) node.right = null;
+        return left||right||node.val==1;
     }
 }
